@@ -18,7 +18,7 @@ exports.up = function(knex) {
         table.string('title').notNullable();
         table.text('text', 'longtext');
         table.bigint('date').notNullable();
-        table.integer('likes').notNullable();
+        table.integer('likes').defaultTo(0);
         table.integer('category_id').notNullable().references('id');
         table.integer('user_id').notNullable().references('id');
     })
@@ -26,7 +26,7 @@ exports.up = function(knex) {
         table.increments('id').primary();
         table.text('text', 'longtext').notNullable();
         table.bigint('date').notNullable();
-        table.integer('likes').notNullable();
+        table.integer('likes').defaultTo(0);
         table.integer('post_id').notNullable().references('id');
         table.integer('user_id').notNullable().references('id');
       })

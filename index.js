@@ -10,14 +10,8 @@ app.use(express.json());
 const categoriesRoute = require('./routes/categoriesRoute')
 app.use('/categories', categoriesRoute)
 
-// const usersRoute = require('./routes/usersRoute')
-// app.use('/users', usersRoute)
-
-// const postsRoute = require('./routes/postsRoute')
-// app.use('/posts', postsRoute)
-
-// const commentsRoute = require('./routes/commentsRoute')
-// app.use('/comments', commentsRoute)
+const usersRoute = require('./routes/usersRoute')
+app.use('/users', usersRoute)
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on ${PORT}`);
