@@ -49,41 +49,9 @@ exports.getCategoryPosts = (req, res) => {
 exports.addPost = (req, res) => {
   knex('posts')
     .insert(req.body)
-    .then((data) => {
+    .then(() => {
       console.log(req.body)
-      const newPostURL = `/categories/${req.params.id}/posts/${data[0]}`;
+      const newPostURL = `/categories/${req.params.id}/posts`;
       res.status(201).location(newPostURL).send(newPostURL)
     })
-}
-
-exports.getSinglePost = (req, res) => {
-  knex('posts')
-    .select("*")
-    .where({ id: req.params.postid })
-    .then((data) => {
-      if (!data.length) {
-        res.sendStatus(404)
-      }
-
-      res.status(200).json(data)
-    })
-    .catch((err) => res.status(400).send(`Error retrieving post with id ${req.params.postId}: ${err}`))
-}
-
-// exports.deletePost = (req, res) => {
-
-// }
-
-exports.getPostComments = (req, res) => {
-  knex('comments')
-    .select("*")
-    .where({ post_id: req.params.postid })
-    .then((data) => {
-      if (!data.length) {
-        res.sendStatus(404)
-      }
-
-      res.status(200).json(data)
-    })
-    .catch((err) => res.status(400).send(`Error retrieving comments from post ${req.params.postId}: ${err}`))
 }
