@@ -3,6 +3,10 @@ const router = express.Router()
 const postsController = require('../controllers/postsController')
 
 router
+  .route('/')
+  .get(postsController.index)
+
+router
   .route('/:id')
   .get(postsController.getSinglePost)
   .post(postsController.addPost)
