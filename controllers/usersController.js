@@ -28,7 +28,7 @@ exports.userRegister = (req, res) => {
     .then(() => {
       res.status(201).send('Registered successfully');
     })
-    .catch(() => {
+    .catch((err) => {
       res.status(400).json({ message: 'Failed registration', error: err.sqlMessage });
     })
 }
@@ -56,6 +56,9 @@ exports.userLogin = (req, res) => {
       const token = jwt.sign(
         { id: user[0].id, email: user[0].email },
         process.env.JWT_SECRET,
+        {
+          expiresIn: '24h'
+        }
       )
 
       res.status(200).json({ token: token });
@@ -63,4 +66,26 @@ exports.userLogin = (req, res) => {
     .catch(() => {
       return res.status(401).send("Email and password are invalid");
     })
+}
+
+exports.getCurrentUser = (req, res) => {
+  if (!req.headers.authorization) {
+    return res.status(401).send("Please login");
+  }
+  const authToken = req.headers.authorization.split(' ')[1];
+
+  jwt.verify(authToken, process.env.JWT_SECRET, (err, payload) => {
+    if (err) {
+      return res.status(403).send('Invalid auth token');
+    } else {
+      knex('users')
+        .where({ email: payload.email })
+        .then((user) => {
+          res.status(200).send(user[0])
+        })
+        .catch(() => {
+          res.status(500).send('Could not fetch data')
+        })
+    }
+  })
 }

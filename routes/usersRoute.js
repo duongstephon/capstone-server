@@ -14,4 +14,8 @@ router
   .route('/login')
   .post(usersController.userLogin);
 
+router
+  .route('/current')
+  .get(usersController.getCurrentUser);
+
 module.exports = router;
