@@ -13,6 +13,10 @@ router
   .delete(postsController.deletePost);
 
 router
+  .route('/:id/user')
+  .get(postsController.getPostUser);
+
+router
   .route('/:id/comments')
   .get(postsController.getPostComments)
   .post(postsController.addComment);

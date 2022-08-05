@@ -44,6 +44,33 @@ exports.deletePost = (req, res) => {
   })
 }
 
+exports.getPostUser = (req, res) => {
+  knex('posts')
+    .select('*')
+    .where({ id: req.params.id })
+    .then((data) => {
+      if (!data.length) {
+        res.sendStatus(404)
+      }
+
+      const currentPost = data[0]
+      
+      knex('users')
+        .select('*')
+        .where({ id: currentPost.user_id })
+        .then((data) => {
+          if (!data.length) {
+            res.sendStatus(404)
+          }
+    
+          res.status(200).json(data)
+        })
+        .catch((err) => res.status(400).send(`Error retrieving user with post id ${req.params.id}: ${err}`))
+    })
+    .catch((err) => 
+      res.status(400).send(`Error retrieving category with id ${req.params.id}: ${err}`))
+}
+
 exports.getPostComments = (req, res) => {
   knex('comments')
     .select("*")
@@ -51,6 +78,7 @@ exports.getPostComments = (req, res) => {
     .then((data) => {
       if (!data.length) {
         res.sendStatus(404)
+        return;
       }
 
       res.status(200).json(data)
