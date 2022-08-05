@@ -68,7 +68,7 @@ exports.getPostUser = (req, res) => {
         .catch((err) => res.status(400).send(`Error retrieving user with post id ${req.params.id}: ${err}`))
     })
     .catch((err) => 
-      res.status(400).send(`Error retrieving category with id ${req.params.id}: ${err}`))
+      res.status(400).send(`Error retrieving user with post id ${req.params.id}: ${err}`))
 }
 
 exports.getPostComments = (req, res) => {
