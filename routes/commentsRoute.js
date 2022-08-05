@@ -6,4 +6,8 @@ router
   .route('/:id')
   .delete(commentsController.deleteComment);
 
+router
+  .route('/:id/user')
+  .get(commentsController.getCommentUser);
+
 module.exports = router;
