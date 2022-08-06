@@ -19,6 +19,7 @@ exports.getCommentUser = (req, res) => {
     .then((data) => {
       if (!data.length) {
         res.sendStatus(404)
+        return;
       }
 
       const currentComment = data[0]
@@ -29,6 +30,7 @@ exports.getCommentUser = (req, res) => {
         .then((data) => {
           if (!data.length) {
             res.sendStatus(404)
+            return;
           }
     
           res.status(200).json(data)
