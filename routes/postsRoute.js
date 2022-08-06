@@ -9,7 +9,6 @@ router
 router
   .route('/:id')
   .get(postsController.getSinglePost)
-  .post(postsController.addPost)
   .delete(postsController.deletePost);
 
 router

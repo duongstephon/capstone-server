@@ -23,16 +23,6 @@ exports.getSinglePost = (req, res) => {
     .catch((err) => res.status(400).send(`Error retrieving post with id ${req.params.postId}: ${err}`))
 }
 
-exports.addPost = (req, res) => {
-  knex('posts')
-    .insert(req.body)
-    .then(() => {
-      console.log(req.body)
-      const newPostURL = `/posts/${req.params.id}`;
-      res.status(201).location(newPostURL).send(newPostURL)
-    })
-}
-
 exports.deletePost = (req, res) => {
   knex('posts')
   .where ({ id: req.params.id })

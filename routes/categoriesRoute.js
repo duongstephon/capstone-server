@@ -15,7 +15,7 @@ router
 router
   .route('/:id/posts')
   .get(categoriesController.getCategoryPosts)
-  // .post(categoriesController.addPost);
+  .post(categoriesController.addPost);
 
 // router
 //   .route('/:id/posts/:postid')
