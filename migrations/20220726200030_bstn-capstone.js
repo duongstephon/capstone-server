@@ -16,17 +16,17 @@ exports.up = function(knex) {
     .createTable('posts', (table) => {
         table.increments('id').primary();
         table.string('title').notNullable();
-        table.string('text').notNullable();
-        table.date('date').notNullable();
-        table.integer('likes').notNullable();
+        table.text('text', 'longtext');
+        table.bigint('date').notNullable();
+        table.integer('likes').defaultTo(0);
         table.integer('category_id').notNullable().references('id');
         table.integer('user_id').notNullable().references('id');
     })
     .createTable('comments', (table) => {
         table.increments('id').primary();
-        table.string('text').notNullable();
-        table.date('date').notNullable();
-        table.integer('likes').notNullable();
+        table.text('text', 'longtext').notNullable();
+        table.bigint('date').notNullable();
+        table.integer('likes').defaultTo(0);
         table.integer('post_id').notNullable().references('id');
         table.integer('user_id').notNullable().references('id');
       })
