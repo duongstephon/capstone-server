@@ -15,6 +15,7 @@ exports.getSingleCategory = (req, res) => {
     .then((data) => {
       if (!data.length) {
         res.sendStatus(404)
+        return;
       }
 
       res.status(200).json(data[0])
@@ -39,6 +40,7 @@ exports.getCategoryPosts = (req, res) => {
     .then((data) => {
       if (!data.length) {
         res.sendStatus(404)
+        return;
       }
 
       res.status(200).json(data)
@@ -50,7 +52,6 @@ exports.addPost = (req, res) => {
   knex('posts')
     .insert(req.body)
     .then(() => {
-      console.log(req.body)
       const newPostURL = `/categories/${req.params.id}/posts`;
       res.status(201).location(newPostURL).send(newPostURL)
     })
