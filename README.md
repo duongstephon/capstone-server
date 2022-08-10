@@ -22,7 +22,7 @@ Clone the project
 In project directory
 
 ```bash
-  cd ohmpage-api
+  cd server/
 ```
 
 To set up the MySQL database locally:
