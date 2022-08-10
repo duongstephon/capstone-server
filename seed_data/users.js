@@ -5,7 +5,7 @@ module.exports = [
         last_name: "Schwartz",
         email: "zshwartz123@gmail.com",
         username: "purposesternpost",
-        password: ""
+        password: "123"
     },
     {
         id: 2,
@@ -13,7 +13,7 @@ module.exports = [
         last_name: "Forbes",
         email: "johnnyboyd02@hongsaitu.com",
         username: "displaytechnician",
-        password: ""
+        password: "123"
     },
     {
         id: 3,
@@ -21,7 +21,7 @@ module.exports = [
         last_name: "Cowan",
         email: "favmin2@nx1.us",
         username: "idolizedaerie",
-        password: ""
+        password: "123"
     },
     {
         id: 4,
@@ -29,7 +29,7 @@ module.exports = [
         last_name: "Atkinson",
         email: "tink0@skillion.org",
         username: "verdantturtle",
-        password: ""
+        password: "123"
     },
     {
         id: 5,
@@ -37,7 +37,7 @@ module.exports = [
         last_name: "McCarthy",
         email: "shawnmccarthy@gmail.com",
         username: "visibilitypufferfish",
-        password: ""
+        password: "123"
     },
     {
         id: 6,
@@ -45,7 +45,7 @@ module.exports = [
         last_name: "James",
         email: "jamesjon@outlook.com",
         username: "SneakyEagle",
-        password: ""
+        password: "123"
     },
     {
         id: 7,
@@ -53,7 +53,7 @@ module.exports = [
         last_name: "Caldwell",
         email: "dudejesse@hacktoy.com",
         username: "TheHarmoniousFoyer",
-        password: ""
+        password: "123"
     },
     {
         id: 8,
@@ -61,7 +61,7 @@ module.exports = [
         last_name: "Franco",
         email: "jordy483@hacktoy.com",
         username: "flagrantstamina14",
-        password: ""
+        password: "123"
     },
     {
         id: 9,
@@ -69,7 +69,7 @@ module.exports = [
         last_name: "Fremm",
         email: "efremm4@smulevip.com",
         username: "WretchedSquad",
-        password: ""
+        password: "123"
     },
     {
         id: 10,
@@ -77,7 +77,7 @@ module.exports = [
         last_name: "Graham",
         email: "ozzieboy07@download-hub.cf",
         username: "heavenlyrocks",
-        password: ""
+        password: "123"
     },
     {
         id: 11,
@@ -85,7 +85,7 @@ module.exports = [
         last_name: "Huynh",
         email: "vodshozn@nautonk.com",
         username: "speedybrowsing",
-        password: ""
+        password: "123"
     },
     {
         id: 12,
@@ -93,7 +93,7 @@ module.exports = [
         last_name: "Wo",
         email: "alexwo6@filevino.com",
         username: "foolishelements",
-        password: ""
+        password: "123"
     },
     {
         id: 13,
@@ -101,7 +101,6 @@ module.exports = [
         last_name: "Chen",
         email: "ydzx2q@jagomail.com",
         username: "LikableOutdoors",
-        password: ""
-    },
-
+        password: "123"
+    }
 ]
