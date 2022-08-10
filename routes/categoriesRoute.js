@@ -17,14 +17,5 @@ router
   .get(categoriesController.getCategoryPosts)
   .post(categoriesController.addPost);
 
-// router
-//   .route('/:id/posts/:postid')
-//   .get(categoriesController.getSinglePost);
-//   .delete(categoriesController.deletePost);
-
-// router
-//   .route('/:id/posts/:postid/comments')
-//   .get(categoriesController.getPostComments);
-
 module.exports = router;
 
